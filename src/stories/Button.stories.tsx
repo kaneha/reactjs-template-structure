@@ -59,16 +59,13 @@ export const Shape = AllShapes.bind({});
 const AllSizes: ComponentStory<typeof Button> = () => (
   <List>
     <ListItem>
-      <Button size='xs'>XS Button</Button>
+      <Button size='small'>Small</Button>
     </ListItem>
     <ListItem>
-      <Button size='sm'>SM Button</Button>
+      <Button size='medium'>Medium</Button>
     </ListItem>
     <ListItem>
-      <Button size='md'>MD Button</Button>
-    </ListItem>
-    <ListItem>
-      <Button size='xl'>XL Button</Button>
+      <Button size='large'>Large</Button>
     </ListItem>
   </List>
 );

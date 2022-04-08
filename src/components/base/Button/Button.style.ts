@@ -7,16 +7,16 @@ const getButtonSize = (size: ButtonSizes) => {
   switch (size) {
     default:
     case 'small':
-      return 'padding: 3px 9px';
+      return 'padding: 3px 9px;';
     case 'medium':
-      return 'padding: 5px 15px';
+      return 'padding: 5px 15px;';
     case 'large':
-      return 'padding: 7px 21px';
+      return 'padding: 7px 21px;';
   }
 };
 
 export const ButtonBase = styled.button<ButtonStyleProps>`
-  padding: 12px 16px;
+  ${({ size }) => getButtonSize(size || 'medium')}
   outline: none;
   color: ${({ variant }) =>
     variant === 'outlined' ? theme.color.primary : 'white'};
