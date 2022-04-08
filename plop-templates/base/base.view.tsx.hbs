@@ -1,0 +1,12 @@
+import { {{pascalCase name}}Props } from './{{pascalCase name}}.props';
+import { Container } from './{{pascalCase name}}.style';
+
+const {{pascalCase name}}: React.FC<ButtonProps> = (props) => {
+  const {
+    className
+  } = props;
+
+  return <Container className={className}></Container>
+};
+
+export default {{pascalCase name}};
