@@ -2,19 +2,20 @@ import { ButtonHTMLAttributes } from 'react';
 import { ITheme } from 'types/theme';
 
 export interface ButtonStyleProps {
-  variant?: ButtonVariants;
-  size?: ButtonSizes;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
   color?: ButtonColor;
-  shape?: ButtonShapes;
+  shape?: ButtonShape;
 }
 
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     ButtonStyleProps {
   color?: ButtonColor;
+  disabled?: boolean;
 }
 
-type ButtonVariants = 'contained' | 'outlined';
-type ButtonShapes = 'rounded' | 'square';
-export type ButtonSizes = 'small' | 'medium' | 'large';
-type ButtonColor = keyof ITheme['color'];
+export type ButtonVariant = 'contained' | 'outlined';
+type ButtonShape = 'rounded' | 'square';
+export type ButtonSize = 'small' | 'medium' | 'large';
+export type ButtonColor = 'primary' | 'secondary' | 'info' | 'warning' | 'error';

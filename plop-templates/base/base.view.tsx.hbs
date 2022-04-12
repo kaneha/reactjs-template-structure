@@ -1,12 +1,19 @@
 import { {{pascalCase name}}Props } from './{{pascalCase name}}.props';
 import { Container } from './{{pascalCase name}}.style';
 
-const {{pascalCase name}}: React.FC<ButtonProps> = (props) => {
+const {{pascalCase name}}: React.FC<{{pascalCase name}}Props> = (props) => {
   const {
-    className
+    children,
+    ...{{name}}Props
   } = props;
 
-  return <Container className={className}></Container>
+  return <Container {...{{name}}Props}>{children}</Container>
 };
+
+{{pascalCase name}}.defaultProps = {
+
+}
+
+{{pascalCase name}}.displayName = '{{pascalCase name}}';
 
 export default {{pascalCase name}};

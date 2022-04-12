@@ -1,0 +1,19 @@
+import React from 'react';
+
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import List from './helpers/components/List';
+import ListItem from './helpers/components/ListItem';
+import {{pascalCase name}} from '../components/base/{{pascalCase name}}';
+
+export default {
+  title: 'Base/{{pascalCase name}}',
+  component: {{pascalCase name}},
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  argTypes: {
+  },
+} as ComponentMeta<typeof {{pascalCase name}}>;
+
+const Base: ComponentStory<typeof {{pascalCase name}}> = (args) => (
+  <{{pascalCase name}} {...args}>{{pascalCase name}}</{{pascalCase name}}>
+);

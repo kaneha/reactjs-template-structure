@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 import { theme } from 'utils/theme';
 
-import { ButtonStyleProps, ButtonSizes } from './Button.props';
+import {
+  ButtonStyleProps,
+  ButtonSize,
+  ButtonColor,
+  ButtonVariant,
+} from './Button.props';
 
-const getButtonSize = (size: ButtonSizes) => {
+const getButtonSize = (size: ButtonSize) => {
   switch (size) {
     default:
     case 'small':
@@ -15,15 +20,25 @@ const getButtonSize = (size: ButtonSizes) => {
   }
 };
 
+const getBackgroundColor = (color: ButtonColor, disabled?: boolean) => {
+  if (disabled) return theme.palette.action.disabledBackground;
+  return theme.palette[color].main;
+};
+
 export const ButtonBase = styled.button<ButtonStyleProps>`
   ${({ size }) => getButtonSize(size || 'medium')}
   outline: none;
-  color: ${({ variant }) =>
-    variant === 'outlined' ? theme.color.primary : 'white'};
-  background-color: ${({ variant }) =>
-    variant === 'contained' ? theme.color.primary : 'transparent'};
+  color: ${({ variant, color, disabled }) =>
+    variant === 'outlined'
+      ? getBackgroundColor(color || 'primary', disabled)
+      : 'white'};
+  background-color: ${({ variant, color, disabled }) =>
+    variant === 'contained'
+      ? getBackgroundColor(color || 'primary', disabled)
+      : 'transparent'};
   border-radius: ${({ shape }) => (shape === 'square' ? '8px' : '16px')};
-  border: 1px solid ${({ color }) => theme.color[color || 'default']};
+  border: 1px solid
+    ${({ color, disabled }) => getBackgroundColor(color || 'primary', disabled)};
   cursor: pointer;
   min-width: 64px;
   min-height: 42px;

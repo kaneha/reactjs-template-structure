@@ -10,8 +10,10 @@ const Button: React.FC<ButtonProps> = (props) => {
 Button.defaultProps = {
   variant: 'contained',
   shape: 'square',
-  size: 'sm',
-  color: 'default',
+  size: 'medium',
+  color: 'primary',
 };
+
+Button.displayName = 'Button';
 
 export default Button;

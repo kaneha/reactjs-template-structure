@@ -1,7 +1,7 @@
 import { HomeProps } from './Home.props';
 import { Container } from './Home.style';
 
-const Home: React.FC<ButtonProps> = (props) => {
+const Home: React.FC<HomeProps> = (props) => {
   const {
     className
   } = props;

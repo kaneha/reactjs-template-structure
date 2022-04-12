@@ -12,17 +12,15 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: {
-      options: ['default', 'primary'],
+      options: ['primary'],
       mapping: {
-        Default: 'default',
         Primary: 'primary',
       },
       control: { type: 'select' },
     },
     variant: {
-      options: ['default', 'outlined', 'contained'],
+      options: ['outlined', 'contained'],
       mapping: {
-        Default: 'default',
         Outline: 'outlined',
         Contained: 'contained',
       },
@@ -43,6 +41,9 @@ const AllVariants: ComponentStory<typeof Button> = () => (
   </List>
 );
 export const Variant = AllVariants.bind({});
+Variant.parameters = {
+  controls: { hideNoControlsWarning: true },
+};
 
 const AllShapes: ComponentStory<typeof Button> = () => (
   <List>
@@ -55,6 +56,9 @@ const AllShapes: ComponentStory<typeof Button> = () => (
   </List>
 );
 export const Shape = AllShapes.bind({});
+Shape.parameters = {
+  controls: { hideNoControlsWarning: true },
+};
 
 const AllSizes: ComponentStory<typeof Button> = () => (
   <List>
@@ -70,6 +74,45 @@ const AllSizes: ComponentStory<typeof Button> = () => (
   </List>
 );
 export const Size = AllSizes.bind({});
+Size.parameters = {
+  controls: { hideNoControlsWarning: true },
+};
+
+const AllColor: ComponentStory<typeof Button> = () => (
+  <List>
+    <ListItem>
+      <Button>Default</Button>
+    </ListItem>
+    <ListItem>
+      <Button color='primary'>Primary</Button>
+    </ListItem>
+  </List>
+);
+export const Color = AllColor.bind({});
+Color.parameters = {
+  controls: { hideNoControlsWarning: true },
+};
+
+
+const AllDisable: ComponentStory<typeof Button> = () => (
+  <List>
+    <ListItem>
+      <Button variant='contained' disabled>
+        Contained
+      </Button>
+    </ListItem>
+    <ListItem>
+      <Button variant='outlined' disabled>
+        Outlined
+      </Button>
+    </ListItem>
+  </List>
+);
+export const Disable = AllDisable.bind({});
+Disable.parameters = {
+  controls: { hideNoControlsWarning: true },
+};
+
 
 const Base: ComponentStory<typeof Button> = (args) => (
   <Button {...args}>Button</Button>
