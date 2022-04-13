@@ -133,4 +133,26 @@ module.exports = (plop) => {
       },
     ], // array of actions
   });
+  plop.setGenerator('provider', {
+    description: 'Create a provider component',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is your provider component name?',
+      },
+    ], // array of inquirer prompts
+    actions: [
+      {
+        type: 'add',
+        path: '../src/providers/{{pascalCase name}}/props.ts',
+        templateFile: './provider/props.ts.hbs',
+      },
+      {
+        type: 'add',
+        path: '../src/providers/{{pascalCase name}}/index.tsx',
+        templateFile: './provider/index.tsx.hbs',
+      }
+    ]
+  });
 };
