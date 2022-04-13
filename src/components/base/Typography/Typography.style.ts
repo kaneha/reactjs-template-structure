@@ -14,6 +14,24 @@ const getTypoColor = (color: TypographyColor, disabled?: boolean) => {
 };
 
 export const Container = styled.p<TypographyStyleProps>`
-  color: ${({ color, disabled }) => getTypoColor(color || 'text', disabled)};
   margin: 0;
+  padding: 0;
+  color: ${({ color, disabled }) => getTypoColor(color || 'text', disabled)};
+  ${({ fontWeight }) => {
+    if (fontWeight) {
+      return `
+      font-weight: ${fontWeight};
+      `;
+    }
+  }}
+  ${({ numOfLine }) => {
+    if (Number(numOfLine) > -1) {
+      return `
+      display: -webkit-box;
+      -webkit-line-clamp: ${numOfLine};
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
+      `;
+    }
+  }}
 `;

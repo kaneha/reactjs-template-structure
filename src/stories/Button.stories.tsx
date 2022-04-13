@@ -11,10 +11,15 @@ export default {
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: {
-      options: ['primary'],
+    color: {
+      options: ['primary', 'secondary', 'info', 'warning', 'success', 'error'],
       mapping: {
         Primary: 'primary',
+        Secondary: 'secondary',
+        Info: 'info',
+        Warning: 'warning',
+        Success: 'success',
+        Error: 'error',
       },
       control: { type: 'select' },
     },
@@ -81,10 +86,10 @@ Size.parameters = {
 const AllColor: ComponentStory<typeof Button> = () => (
   <List>
     <ListItem>
-      <Button>Default</Button>
+      <Button>Primary</Button>
     </ListItem>
     <ListItem>
-      <Button color='primary'>Primary</Button>
+      <Button color='secondary'>Secondary</Button>
     </ListItem>
   </List>
 );
@@ -92,7 +97,6 @@ export const Color = AllColor.bind({});
 Color.parameters = {
   controls: { hideNoControlsWarning: true },
 };
-
 
 const AllDisable: ComponentStory<typeof Button> = () => (
   <List>
@@ -112,7 +116,6 @@ export const Disable = AllDisable.bind({});
 Disable.parameters = {
   controls: { hideNoControlsWarning: true },
 };
-
 
 const Base: ComponentStory<typeof Button> = (args) => (
   <Button {...args}>Button</Button>

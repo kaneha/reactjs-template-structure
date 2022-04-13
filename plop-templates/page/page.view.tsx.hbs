@@ -2,12 +2,8 @@ import { {{pascalCase name}}Props } from './{{pascalCase name}}.props';
 import { Container } from './{{pascalCase name}}.style';
 
 const {{pascalCase name}}: React.FC<{{pascalCase name}}Props> = (props) => {
-  const {
-    children,
-    ...{{camelCase name}}Props
-  } = props;
 
-  return <Container {...{{camelCase name}}Props}>{children}</Container>
+  return <Container>{{pascalCase name}} Page</Container>
 };
 
 {{pascalCase name}}.defaultProps = {

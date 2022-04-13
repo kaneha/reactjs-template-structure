@@ -1,12 +1,7 @@
 import styled from 'styled-components';
 import { theme } from 'utils/theme';
 
-import {
-  ButtonStyleProps,
-  ButtonSize,
-  ButtonColor,
-  ButtonVariant,
-} from './Button.props';
+import { ButtonStyleProps, ButtonSize, ButtonColor } from './Button.props';
 
 const getButtonSize = (size: ButtonSize) => {
   switch (size) {
@@ -38,7 +33,10 @@ export const ButtonBase = styled.button<ButtonStyleProps>`
       : 'transparent'};
   border-radius: ${({ shape }) => (shape === 'square' ? '8px' : '16px')};
   border: 1px solid
-    ${({ color, disabled }) => getBackgroundColor(color || 'primary', disabled)};
+    ${({ color, disabled, variant }) =>
+      disabled && variant !== 'outlined'
+        ? 'transparent'
+        : getBackgroundColor(color || 'primary', disabled)};
   cursor: pointer;
   min-width: 64px;
   min-height: 42px;

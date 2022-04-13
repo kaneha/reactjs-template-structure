@@ -4,16 +4,16 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import List from './helpers/components/List';
 import ListItem from './helpers/components/ListItem';
-import {{pascalCase name}} from '../components/base/{{pascalCase name}}';
+import Portal from '../components/base/Portal';
 
 export default {
-  title: 'Base/{{pascalCase name}}',
-  component: {{pascalCase name}},
+  title: 'Base/Portal',
+  component: Portal,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
   },
-} as ComponentMeta<typeof {{pascalCase name}}>;
+} as ComponentMeta<typeof Portal>;
 
-const Base: ComponentStory<typeof {{pascalCase name}}> = (args) => (
-  <{{pascalCase name}} {...args} />
+const Base: ComponentStory<typeof Portal> = (args) => (
+  <Portal {...args} />
 );

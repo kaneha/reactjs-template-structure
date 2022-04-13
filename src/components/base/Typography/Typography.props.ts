@@ -1,17 +1,17 @@
 import { HTMLAttributes } from 'react';
-import { ITheme } from 'types/theme';
 
 export interface TypographyStyleProps {
   color?: TypographyColor;
   variant?: TypographyVariant;
   disabled?: boolean;
+  fontWeight?: TypographyFontWeight;
+  numOfLine?: number;
 }
 
 export interface TypographyProps
   extends HTMLAttributes<HTMLParagraphElement>,
     TypographyStyleProps {
   component?: Component;
-  numOfLine?: number;
   color?: TypographyColor;
 }
 
@@ -48,3 +48,15 @@ export type TypographyColor =
   | 'warning'
   | 'success'
   | 'error';
+
+export type TypographyFontWeight =
+  | '100'
+  | '200'
+  | '300'
+  | '400'
+  | '500'
+  | '600'
+  | '700'
+  | '800'
+  | '900'
+  | 'bold';

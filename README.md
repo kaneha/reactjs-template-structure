@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# Setup and run guideline
+This is a guideline to help you run this source stably.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+## Install all necessary libraries 
 
 In the project directory, you can run:
 
-### `npm start`
+`npm install` or `yarn`
 
-Runs the app in the development mode.\
+To install all necessary libraries
+
+Then, run the following command:
+`npm run start` or `yarn start`
+
+To run the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+To run storybook to overview all components, run the following command:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm run storybook` or `yarn storybook`
 
-### `npm run build`
+## Generate all necessary files whenever you want to create new component
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run the following command:
+`npm run generate` or `yarn generate`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+And do as the guide appear in console
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Note: You have to make a component name in pascal case format.**
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Source structure
+```
+├── .storybook (storybook settings)
+├── plop-templates (auto-generate templates)
+├── public
+├── src
+│   ├── components (all common components)
+│   │   ├── base (all base components)
+│   │   ├── layout (all layout components)
+│   │   ├── module (all common module components)
+│   ├── page (all render page)
+│   │   ├── Home (page)
+│   │   ├── Login
+│   ├── stories (all storybook item)
+│   ├── types (all common types)
+│   ├── utils (all common utilities)
+│   ├── index.css
+│   ├── index.tsx
+│   ├── logo.svg
+│   ├── react-app-env.d.ts
+│   ├── reportWebVitals.ts
+│   ├── setupTests.ts
+├── .gitignore
+├── package.json
+├── tsconfig.json
+├── yarn.lock / package-lock.json
+├── README.md
+```

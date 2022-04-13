@@ -30,6 +30,11 @@ module.exports = (plop) => {
         path: '../src/components/base/{{pascalCase name}}/index.tsx',
         templateFile: './base/index.tsx.hbs',
       },
+      {
+        type: 'add',
+        path: '../src/stories/{{pascalCase name}}.stories.tsx',
+        templateFile: './stories/base.stories.tsx.hbs',
+      },
     ], // array of actions
   });
   plop.setGenerator('module', {
@@ -109,22 +114,22 @@ module.exports = (plop) => {
       {
         type: 'add',
         path: '../src/page/{{pascalCase name}}/{{pascalCase name}}.props.ts',
-        templateFile: './base/base.props.ts.hbs',
+        templateFile: './page/page.props.ts.hbs',
       },
       {
         type: 'add',
         path: '../src/page/{{pascalCase name}}/{{pascalCase name}}.style.ts',
-        templateFile: './base/base.styles.ts.hbs',
+        templateFile: './page/page.styles.ts.hbs',
       },
       {
         type: 'add',
         path: '../src/page/{{pascalCase name}}/{{pascalCase name}}.view.tsx',
-        templateFile: './base/base.view.tsx.hbs',
+        templateFile: './page/page.view.tsx.hbs',
       },
       {
         type: 'add',
         path: '../src/page/{{pascalCase name}}/index.tsx',
-        templateFile: './base/index.tsx.hbs',
+        templateFile: './page/index.tsx.hbs',
       },
     ], // array of actions
   });

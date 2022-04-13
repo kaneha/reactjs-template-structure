@@ -1,5 +1,4 @@
 import { ButtonHTMLAttributes } from 'react';
-import { ITheme } from 'types/theme';
 
 export interface ButtonStyleProps {
   variant?: ButtonVariant;
